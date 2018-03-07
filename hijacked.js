@@ -1,3 +1,5 @@
+alert('here we are');
+
 var delayseconds = 2;
 var basevalue = 0.00000001;
 var maxwins = 0;
