@@ -1,0 +1,181 @@
+* {
+	box-sizing:border-box;
+}
+
+body {
+	width: 515px;
+	height: 170px;
+	overflow-x: hidden;
+	margin:1px;
+	padding: 1px;
+	font-family: sans-serif;
+	color: white;
+	background-color: black;
+	
+}
+
+h1{
+	margin-top:0;
+	font-size: 1.5em;
+	text-align: center;
+	font-weight: bold;
+}
+
+.thin-border {
+border: 1px solid white;
+border-radius: 10px;
+margin: 10px;
+text-align: center;
+padding: 5px;
+
+}
+
+body:after {
+content : "";
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+background-image: url("../img/icon.png"); 
+width: 100%;
+height: 100%;
+opacity : 0.3;
+z-index: -1;
+ background-repeat: no-repeat;
+   background-position: center;
+background-attachment:fixed;
+ }
+ 
+.btn {
+	margin-top: 2px;
+    margin-left: 5px;
+}
+
+.padded10 {
+	padding: 15px;	
+}
+
+label {
+	margin-bottom: 0px;
+}
+
+input{
+	width:100%;
+	padding:6px;
+	border:1px solid #aaa;
+	border-radius: 8px;
+	text-align: center;
+}
+
+
+input:focus{
+	border-color: yellow;
+	outline: none;
+}
+
+.row {
+	margin-top: 5px;
+	margin-bottom: 6px;
+	padding-bottom: 10px;
+
+}
+
+.toprow {
+
+}
+
+.bottomrow {
+	
+}
+
+.bbz-langselect {
+	margin-right: 10px;
+	color: black;
+}
+
+.bbz-top-floater {
+	display: flex;                 
+    align-items: flex-end;
+	justify-content: center;
+    float: left;
+    width:  115px;
+    height: 5px;
+	margin-right: 5px; 
+	margin-bottom: 2px;  
+}
+
+.bbz-floater {
+    float: left;
+    width:  115px;
+    height: 55px;
+	margin-right: 5px;  
+	margin-bottom: 1px;  
+}
+
+.bbz-switch-top-floater {
+	display: flex;                 
+    align-items: flex-end;
+	justify-content: center;
+    float: left;
+    width:  70px;
+    height: 5px;
+    margin-right: 5px;  
+}
+
+.bbz-switch-floater {
+    float: left;
+    width:  70px;
+    margin-right: 5px;  
+	margin-bottom: 2px;  
+}
+
+.bbz-bbzcodes-top-floater {
+	display: flex;                 
+    align-items: flex-end;
+	justify-content: center;
+    float: left;
+    width:  135px;
+    height: 5px;
+    margin-right: 5px;  
+}
+
+.bbz-bbzcodes-floater {
+    float: left;
+    width:  135px;
+    margin-right: 5px;  
+	margin-bottom: 2px;  
+}
+
+.bbz-method-top-floater {
+	display: flex;                 
+    align-items: flex-end;
+	justify-content: center;
+    float: left;
+    width:  180px;
+    height: 5px;
+	margin-left: 3px;
+	margin-top: 3px;
+    margin-right: 5px;  
+
+}
+
+.bbz-method-floater {
+    float: left;
+    width:  180px;
+	margin-left: 3px;
+    margin-right: 5px;  
+	margin-bottom: 2px;  
+}
+
+.bbz-stop-floater {
+    float: right;
+    height: 40px;
+    margin-right: 5px;  
+ 
+}
+
+select {
+	text-align-last:center; 
+	}
+
+

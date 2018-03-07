@@ -1,4 +1,4 @@
-alert('here we are');
+alert('AlphaGriffin Dice is Online');
 
 var delayseconds = 2;
 var basevalue = 0.00000001;

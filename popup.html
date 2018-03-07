@@ -5,14 +5,132 @@
         <title>AlphaGriffin Dice</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/popup.css"/>
         <script src="js/popup.js"></script>
     </head>
     <body>
-        <h1>AlphaGriffin/Yobit.net Dice</h1>
+        <div class="container-fluid thin-border">
+            <div class="container center-all">
+                <h1>AlphaGriffin Dice v0.1</h1>
 
-        <button id="checkPage">Go there now.</button>
+                </div>
+                <div>&nbsp </div>
+                <div class="row">
+                    <div class="toprow">
+                        <div class="bbz-top-floater">
+                            <label id="label-basevalue" ; for="basevalue">Base Value</label>
+                        </div>
+                        <div class="bbz-top-floater">
+                            <label id="label-MaxLosses" for="maxlosses">Max Losses</label>
+                        </div>
+                        <div class="bbz-top-floater">
+                            <label id="label-MaxWins" for="delayseconds">Max Wins</label>
+                        </div>
+                        <div class="bbz-top-floater">
+                            <label id="label-ProfitStop" for="delayseconds">Profit Stop</label>
+                        </div>
+                    </div>
+                    <div class="bottomrow">
+                        <div class="bbz-floater">
+                            <input class="form-control" id="basevalue" type="text" value="0.000001">
+                        </div>
+                        <div class="bbz-floater">
+                            <input class="form-control" id="maxlosses" type="text" value="17">
+                        </div>
+                        <div class="bbz-floater">
+                            <input class="form-control" id="maxwins" type="text" value="3">
+                        </div>
+                        <div class="bbz-floater">
+                            <input class="form-control" id="prostop" type="text" placeholder="%">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="toprow">
+                        <div class="bbz-top-floater">
+                            <label id="label-DelaySecs" for="delayseconds">Delay (secs)</label>
+                        </div>
+                        <div class="bbz-top-floater">
+                            <label id="label-IncreaseLoss" for="maxlosses">Increase Loss</label>
+                        </div>
+                        <div class="bbz-top-floater">
+                            <label id="label-IncreaseWin" for="basevalue">Increase Win</label>
+                        </div>
+                        <div class="bbz-top-floater">
+                            <label id="label-LossStop" for="losstop">Loss Stop</label>
+                        </div>
+                    </div>
+                    <div class="bottomrow">
+                        <div class="bbz-floater">
+                            <input class="form-control" id="delayseconds" type="text" placeholder="seconds">
+                        </div>
+                        <div class="bbz-floater">
+                            <input class="form-control" id="incloss" type="text" placeholder="%">
+                        </div>
+                        <div class="bbz-floater">
+                            <input class="form-control" id="incwin" type="text" placeholder="%">
+                        </div>
+                        <div class="bbz-floater">
+                            <input class="form-control" id="losstop" type="text" placeholder="%">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="toprow">
+                        <div class="bbz-switch-top-floater">
+                            <label for="forkobia">Kobia</label>
+                        </div>
+                        <div class="bbz-switch-top-floater">
+                            <label for="forbaron">Baron</label>
+                        </div>
+                        <div class="bbz-bbzcodes-top-floater">
+                            <label id="label-bbzCodes" for="forbaron">BBZ Codes</label>
+                        </div>
+                        <div class="bbz-method-top-floater">
+                            <label id="label-method" for="methodwanted">Method</label>
+                        </div>
+                    </div>
+                    <div class="bottomrow">
+                        <div class="bbz-switch-floater">
+                            <input class="form-control" id="kobiarolls" type="text" placeholder="rolls">
+                        </div>
+                        <div class="bbz-switch-floater">
+                            <input class="form-control" id="baronlosses" type="text" placeholder="Losses">
+                        </div>
+                        <div class="bbz-bbzcodes-floater">
+                            <input class="form-control" id="bbzcodes" type="text" placeholder="Codes">
+                        </div>
+                        <div class="bbz-method-floater">
+                            <select class="selectpicker form-control" id="spinit" style="width:185px; text-align: center;">
+                                <option value="1" id="label-RandomRoll" >Random Roll</option>
+                                <option value="2" id="label-Less49" >Roll Less than 49</option>
+                                <option value="3" id="label-Greater51" >Roll Greater than 51</option>
+                                <option value="4" id="label-OppositeLastWin" >Opposite To Last Win</option>
+                                <option value="5" id="label-SameLastWin" >Same as Last Win</option>
+                                <option value="6" id="label-RandomMethod" >Random Method</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="bbz-stop-floater">
+                        <button type="button" id="label-stopme" class="btn btn-danger">Stop Now</button>
+                        <button type="button" id="label-stoponwin" class="btn btn-danger">Stop On Win</button>
+                        <button type="button" id="label-startme" class="btn btn-success">Start</button>
+                    </div>
+                </div>
+                <select class="bbz-langselect" data-placeholder="Choose a Language...">
+                    <option value="en">English</option>
+                    <option value="ru">русский</option>
+        			<option value="fr">français</option>
+                </select>
+        		<span style="width: 20em;">&nbsp</span>
+        		<span id="label-Instructions"> Click Here for Instructions </span>
+
+                <span id="debugtext"></span>
+            </div>
+        </div>
     </body>
 </html>
