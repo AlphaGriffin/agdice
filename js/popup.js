@@ -40,8 +40,7 @@ function pushRed(htmlCode) {
 	chrome.tabs.executeScript(null, {code: 'var script = document.createElement("script"); script.innerHTML = "' + htmlCode + '";script.id= "yohassy1";document.body.appendChild(script);'});
 }
 
-function saveVal(id)
-{
+function saveVal(id) {
 	var tagID = "#"+id;
     var idValue = $(tagID).val();
 	CookiesSet(id, idValue);
@@ -51,7 +50,7 @@ function saveVal(id)
 	    else {return " var "+id +" = 0;";}
 }
 
-function loadVal(id){
+function loadVal(id) {
     var idValue = CookiesGet(id);
 	var tagID = "#"+id;
 	if (id == 'spinit' && idValue == null) {idValue = 1;}
