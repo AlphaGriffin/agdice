@@ -6,7 +6,7 @@
   "version": "1.0",
 
   "browser_action": {
-   "default_icon": "logo.png",
+   "default_icon": "img/logo.png",
    "default_popup": "popup.html"
   },
   "permissions": [
@@ -15,6 +15,6 @@
   ],
   "content_scripts" : [{
    "matches" : [ "https://yobit.net/en/dice/*"],
-   "js" : ["hijacked.js"]
+   "js" : ["js/hijacked.js"]
   }]
 }
