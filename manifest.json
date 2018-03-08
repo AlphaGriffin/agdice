@@ -3,7 +3,7 @@
 
   "name": "AlphaGriffinDice",
   "description": "Play dice the Alphagriffin way.",
-  "version": "1.0",
+  "version": "0.1",
 
   "browser_action": {
    "default_icon": "img/logo.png",
@@ -15,6 +15,6 @@
   ],
   "content_scripts" : [{
    "matches" : [ "https://yobit.net/en/dice/*"],
-   "js" : ["js/hijacked.js", "js/popup.js"]
+   "js" : ["js/jquery.min.js", "js/inject.js"]
   }]
 }
