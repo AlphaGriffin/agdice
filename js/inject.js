@@ -48,7 +48,10 @@ function ag_stop_win() {
 
 function ag_bet() {
     bet = $('.bet').val();
-    prize = $('.prize').text();
+
+    // can't read the prize directly, calculate it instead
+    //prize = $('.prize').text();
+    prize = Number(bet) * 2
 
     // randomly choose one of the bet buttons
     btn = Math.floor(Math.random() * 2);
