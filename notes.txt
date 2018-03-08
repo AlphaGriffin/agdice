@@ -1,12 +1,15 @@
 
 THE VALUE OF THIS WILL CHANGE TO WIN OR LOSE AFTER THE BUTTON HAS BEEN PRESSED
+/html/body/div[1]/main/div/div[2]/div/div[2]/div/div[1]/table/tbody/tr/td[4]/input[2]
 <input type="button" class="clDicePlay" onclick="doDiceSend(this,1);" origin="Roll > 52" value="Roll > 52">
 <input type="button" class="clDicePlay" onclick="doDiceSend(this,0);" origin="Roll < 48" value="Roll < 48">
 THERE ARE 2 BUTTONS SHOULD DO SAME THING... SHOULDNT MATTER WHICH
 
+/html/body/div[1]/main/div/div[2]/div/div[2]/div/div[1]/table/tbody/tr/td[2]/div/input
 <input class="bet" name="bet" maxlength="25" type="text" value="0.01">
 SETTING THIS VALUE IS THE PLACING OF A BET
 
+/html/body/div[1]/main/div/div[2]/div/div[2]/div/div[1]/table/tbody/tr/td[1]/div/div/a
 <span>BTC (Bitcoin) - 0.00141433 BTC</span>
 AND THIS IS MY CURRENT BALANCE.
 
