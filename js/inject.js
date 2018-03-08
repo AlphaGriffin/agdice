@@ -39,13 +39,13 @@ function ag_await_result() {
         console.log("btn text: " + ag_curbet[2].val());
 
         if (ag_curbet[2].val().toLowerCase().startsWith("win")) {
-            ag_curbet.append(1);
-            ag_results.append(ag_curbet);
+            ag_curbet.push(1);
+            ag_results.push(ag_curbet);
             ag_curbet = false;
         }
         else if (ag_curbet[2].val().toLowerCase().startsWith("lost")) {
-            ag_curbet.append(-1);
-            ag_results.append(ag_curbet);
+            ag_curbet.push(-1);
+            ag_results.push(ag_curbet);
             ag_curbet = false;
         }
         else {
