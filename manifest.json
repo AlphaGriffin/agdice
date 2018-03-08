@@ -15,6 +15,7 @@
   ],
   "content_scripts" : [{
    "matches" : [ "https://yobit.net/en/dice/*"],
-   "js" : ["js/jquery.min.js", "js/inject.js"]
+   "js" : ["js/jquery.min.js", "js/chartist.min.js", "js/inject.js"],
+   "css" : ["css/chartist.css", "css/inject.css"]
   }]
 }

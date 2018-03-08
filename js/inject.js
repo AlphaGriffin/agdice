@@ -17,11 +17,14 @@ $('#ag_stop_win').click(ag_stop_win);
 $('h1').append('<button id="ag_results">Show Results</button>');
 $('#ag_results').click(ag_show_results);
 
+$('body').append('<div class="ct-chart ct-perfect-fourth"></div>');
+
 
 var ag_initbet = 0;
 var ag_continue = 0; // 0=stop now, 1=stop after win, 2=keep going
 var ag_results = [];
 var ag_curbet = false;
+var ag_chartwin = false;
 
 function ag_play() {
     if (ag_curbet) {
@@ -78,7 +81,7 @@ function ag_await_result() {
             ag_curbet.push(-1);
             ag_got_result();
         }
-        else {
+        else { // still waiting
             window.setTimeout(ag_await_result, 100);
         }
     }
@@ -125,6 +128,8 @@ function ag_show_results() {
     var bets = 0;
     var prizes = 0;
 
+    data.series = [];
+
     for (var i=0; i < ag_results.length; i++) {
         var item = ag_results[i];
         bets += Number(item[0]);
@@ -135,6 +140,7 @@ function ag_show_results() {
         else {
             ++losses;
         }
+        data.series.push({ data: [ plays, wins, losses, bets, prizes ] });
     }
 
     results = "Plays: "+plays+"\n";
@@ -145,5 +151,56 @@ function ag_show_results() {
     results += "P/L: "+(prizes - bets)+" ("+(100*prizes/bets)+"%)";
 
     alert(results);
+
+    new Chartist.Line('.ct-chart', data, options, responsiveOptions);
+    $('.ct-chart').show();
+    $('.ct-chart').click(function() {
+        $('.ct-chart').hide();
+    });
 }
+
+
+/* Add a basic data series with six labels and values */
+var data = {
+  labels: ['plays', 'wins', 'losses', 'bets placed', 'prizes won', 'p/l'],
+  /*
+  series: [
+    {
+      data: [1, 2, 3, 5, 8, 13]
+    }
+  ]
+  */
+};
+
+/* Set some base options (settings will override the default settings in Chartist.js *see default settings*). We are adding a basic label interpolation function for the xAxis labels. */
+var options = {
+  axisX: {
+    labelInterpolationFnc: function(value) {
+      return 'Calendar Week ' + value;
+    }
+  }
+};
+
+/* Now we can specify multiple responsive settings that will override the base settings based on order and if the media queries match. In this example we are changing the visibility of dots and lines as well as use different label interpolations for space reasons. */
+var responsiveOptions = [
+  ['screen and (min-width: 641px) and (max-width: 1024px)', {
+    showPoint: false,
+    axisX: {
+      labelInterpolationFnc: function(value) {
+        return 'Week ' + value;
+      }
+    }
+  }],
+  ['screen and (max-width: 640px)', {
+    showLine: false,
+    axisX: {
+      labelInterpolationFnc: function(value) {
+        return 'W' + value;
+      }
+    }
+  }]
+];
+
+/* Initialize the chart with the above settings */
+//new Chartist.Line('.ct-chart', data, options, responsiveOptions);
 
