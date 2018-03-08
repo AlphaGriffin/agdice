@@ -142,7 +142,7 @@ function ag_show_results() {
     results += "Losses: "+losses+"\n";
     results += "Bets placed: "+bets+"\n";
     results += "Prizes won: "+prizes+"\n";
-    results += "P/L: "+(prizes - bets);
+    results += "P/L: "+(prizes - bets)+" ("+(100*prizes/bets)+"%)";
 
     alert(results);
 }
